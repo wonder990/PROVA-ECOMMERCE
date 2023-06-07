@@ -1,5 +1,7 @@
+import { NavBar } from '@/components/NavBar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { NavBarList } from '@/constants/NavbarList'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="">
+        <div className='relative min-h-screen w-full'>
+        <NavBar dataNav={NavBarList}/>
+        {children}
+        </div>
+      </body>
     </html>
   )
 }
