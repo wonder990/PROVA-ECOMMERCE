@@ -1,6 +1,5 @@
 "use client";
 import React, { createContext, useState, useContext, PropsWithChildren } from 'react';
-
 interface authContextData {
   value: string;
   updateValue: (newValue: string) => void;

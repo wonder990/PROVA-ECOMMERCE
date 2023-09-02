@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone  } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import './globals.css';
+import { db } from '@/firebase/firebase-config';
 
 const fontNav = Lobster({ weight: "400", subsets: ["latin"]  })
 const fontTitle = Noto_Serif({ weight: "400", subsets: ["latin"]  })
@@ -23,6 +24,16 @@ export default function Home() {
   }, []);
 
   const bgImageUrl = getImageUrl(bgImage);
+
+  async function leerTodos (user:any){
+    const res = await db.collection(user).get()
+    const usuariosFormateados = res.docs.map((doc:any) => ({
+        id:doc.id,
+        ...doc.data()
+    }))
+    console.log(usuariosFormateados)
+  }
+  leerTodos("usuarios")
 
   return (
     <main className={`absolute top-0 z-10 h-screen bg-image overflow-y-scroll`} style={{ backgroundImage: `url(${bgImageUrl})` }}>

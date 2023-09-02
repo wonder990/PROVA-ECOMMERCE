@@ -7,7 +7,7 @@ export  let NavBarList = [
       route:"/"
     },
     {
-      label:"Menu",
+      label:"Productos",
       icon:faUtensils,
       route:"./client/menu"
     },

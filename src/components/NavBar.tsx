@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
@@ -47,8 +47,8 @@ export const NavBar = ({dataNav} : NavBarProps) => {
         </ul>
       </nav>
       <div className={`${toggleNav ? "block" : "hidden"} md:flex items-center`}>
-        <a className="text-white text-[15px] w-full py-[20px] md:text-[20px] gap-3 flex items-center hover:scale-110 transition-[0.5s]" href="">
-          <FontAwesomeIcon className='text-[#ff2d2d] text-[18px]' icon={faPhone} />+591 73835363</a>
+        <Link className="text-white text-[15px] w-full py-[20px] md:text-[20px] gap-3 flex items-center hover:scale-110 transition-[0.5s]" href="">
+          <FontAwesomeIcon className='text-[#ff2d2d] text-[18px]' icon={faPhone} />+591 73835363</Link>
       </div>
     </header>
   )

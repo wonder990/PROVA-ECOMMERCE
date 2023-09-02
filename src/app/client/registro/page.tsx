@@ -7,7 +7,7 @@ import { useauthContext } from '@/context/authContext';
 
 const Registro = () => {
   const { value, updateValue } = useauthContext();
-  console.log(value)
+
   return (
     <div className='w-full flex justify-center mt-[80px]'>
       <section className='shadow-2xl bg-white h-auto flex w-auto'>
